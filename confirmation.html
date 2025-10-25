@@ -10,19 +10,16 @@
 <body>
 	<div class="container">
         <h1>Order Confirmed!</h1>
-        <p>Thank you for your order. Here are the details of your selections:</p>
-        
+        <p>Thank you for your order. Here are the details of your selections:</p>        
         <div id="confirmationDetails">
-            </div>
-
+		
+        </div>
         <a href="index.html" class="back-link">Place a New Order</a>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-
             const params = new URLSearchParams(window.location.search);
-
             const name = params.get('name') || 'N/A';
             const email = params.get('email') || 'N/A';
             const cpu = params.get('cpu') || 'N/A';
@@ -40,13 +37,13 @@
                 <p><strong>Email:</strong> ${email}</p>
                 
                 <h2>PC Components Chosen</h2>
-                <ul>
-                    <li><strong>CPU:</strong> ${cpu}</li>
-                    <li><strong>GPU:</strong> ${gpu}</li>
-                    <li><strong>RAM:</strong> ${ram}</li>
-                    <li><strong>Storage:</strong> ${storage}</li>
-                    <li><strong>PSU:</strong> ${psu}</li>
-                </ul>
+                <div id="details">
+					<strong>CPU:</strong> ${cpu}<br>
+					<strong>GPU:</strong> ${gpu}<br>
+					<strong>RAM:</strong> ${ram}<br>
+					<strong>Storage:</strong> ${storage}<br>
+					<strong>PSU:</strong> ${psu}<br>
+                </div>
             `;
         });
     </script>

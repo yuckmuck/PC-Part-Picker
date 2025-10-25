@@ -9,6 +9,8 @@
 	<div class="container">
         <h1>Build Your Custom PC</h1>
         <form id="pcBuildForm">
+		
+		
             <fieldset>
                 <legend>Your Details</legend>
                 <label for="userName">Name:</label>
@@ -25,14 +27,14 @@
                 <select id="cpu" name="cpu" required>
                     <option value="">-- Select CPU --</option>
                     <optgroup label="Intel">
-                        <option value="Intel i3-14100F (Low)">Intel i3-14100F</option>
-                        <option value="Intel i5-14600K (Mid)">Intel i5-14600K</option>
-                        <option value="Intel i9-14900K (High)">Intel i9-14900K</option>
+                        <option value="Intel i3-14100F">Intel i3-14100F</option>
+                        <option value="Intel i5-14600K">Intel i5-14600K</option>
+                        <option value="Intel i9-14900K">Intel i9-14900K</option>
                     </optgroup>
                     <optgroup label="AMD">
-                        <option value="AMD Ryzen 3 8300G (Low)">AMD Ryzen 3 8300G</option>
-                        <option value="AMD Ryzen 5 7600X (Mid)">AMD Ryzen 5 7600X</option>
-                        <option value="AMD Ryzen 9 7950X (High)">AMD Ryzen 9 7950X</option>
+                        <option value="AMD Ryzen 3 8300G">AMD Ryzen 3 8300G</option>
+                        <option value="AMD Ryzen 5 7600X">AMD Ryzen 5 7600X</option>
+                        <option value="AMD Ryzen 9 7950X">AMD Ryzen 9 7950X</option>
                     </optgroup>
                 </select><br><br>
 
@@ -40,14 +42,14 @@
                 <select id="gpu" name="gpu" required>
                     <option value="">-- Select GPU --</option>
                     <optgroup label="NVIDIA">
-                        <option value="NVIDIA RTX 4060 (Low)">NVIDIA RTX 3060</option>
-                        <option value="NVIDIA RTX 4070 (Mid)">NVIDIA RTX 4070</option>
-                        <option value="NVIDIA RTX 4090 (High)">NVIDIA RTX 5090</option>
+                        <option value="NVIDIA RTX 3060">NVIDIA RTX 3060</option>
+                        <option value="NVIDIA RTX 4070">NVIDIA RTX 4070</option>
+                        <option value="NVIDIA RTX 5090">NVIDIA RTX 5090</option>
                     </optgroup>
                     <optgroup label="AMD">
-                        <option value="AMD Radeon RX 7600 (Low)">AMD Radeon RX 7600</option>
-                        <option value="AMD Radeon RX 7800 XT (Mid)">AMD Radeon RX 7800 XT</option>
-                        <option value="AMD Radeon RX 7900 XTX (High)">AMD Radeon RX 7900 XTX</option>
+                        <option value="AMD Radeon RX 7600">AMD Radeon RX 7600</option>
+                        <option value="AMD Radeon RX 7800 XT">AMD Radeon RX 7800 XT</option>
+                        <option value="AMD Radeon RX 7900 XTX">AMD Radeon RX 7900 XTX</option>
                     </optgroup>
                 </select><br><br>
 
@@ -117,7 +119,9 @@
             const psu = document.getElementById('psu').value;       
 
             
-            const queryString = `?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&cpu=${encodeURIComponent(cpu)}&gpu=${encodeURIComponent(gpu)}&ram=${encodeURIComponent(ram)}&storage=${encodeURIComponent(storage)}&psu=${encodeURIComponent(psu)}`;
+            const queryString = `?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&cpu=${encodeURIComponent(cpu)}
+								&gpu=${encodeURIComponent(gpu)}&ram=${encodeURIComponent(ram)}&storage=${encodeURIComponent(storage)}
+								&psu=${encodeURIComponent(psu)}`;
 
             
             window.location.href = 'confirmation.html' + queryString;
