@@ -1,0 +1,55 @@
+<html>
+
+<head>
+	<link rel="stylesheet" href="index-css.css">
+	<title>
+		PC Part Picker
+	</title>
+</head>
+	
+<body>
+	<div class="container">
+        <h1>Order Confirmed!</h1>
+        <p>Thank you for your order. Here are the details of your selections:</p>
+        
+        <div id="confirmationDetails">
+            </div>
+
+        <a href="index.html" class="back-link">Place a New Order</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const params = new URLSearchParams(window.location.search);
+
+            const name = params.get('name') || 'N/A';
+            const email = params.get('email') || 'N/A';
+            const cpu = params.get('cpu') || 'N/A';
+            const gpu = params.get('gpu') || 'N/A';
+            const ram = params.get('ram') || 'N/A';
+            const storage = params.get('storage') || 'N/A';
+            const psu = params.get('psu') || 'N/A';
+            
+
+            const detailsDiv = document.getElementById('confirmationDetails');
+
+            detailsDiv.innerHTML = `
+                <h2>User Information</h2>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                
+                <h2>PC Components Chosen</h2>
+                <ul>
+                    <li><strong>CPU:</strong> ${cpu}</li>
+                    <li><strong>GPU:</strong> ${gpu}</li>
+                    <li><strong>RAM:</strong> ${ram}</li>
+                    <li><strong>Storage:</strong> ${storage}</li>
+                    <li><strong>PSU:</strong> ${psu}</li>
+                </ul>
+            `;
+        });
+    </script>
+
+</body>
+</html>	
